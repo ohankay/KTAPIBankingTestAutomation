@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "fed3b6ad-42b5-4e41-8d0f-314c5baea691",
+		"name": "KT Apı Banking Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3337724"
+	},
+	"item": [
+		{
+			"name": "Access Token with ClientCredentials Flow (for Public Endpoints)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"    var res = pm.response.json();\r",
+							"    pm.environment.set(\"access_token\", res.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "public accounts transfers",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "81a7613772634017ae36e211c6af52ca",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "lRfRg9Ybrdcs6MIrCUdELRsyVJHVvXuxu9ZjJzspGFq/9h1FWxLiVA==",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://idprep.kuveytturk.com.tr/api/connect/token",
+					"protocol": "https",
+					"host": [
+						"idprep",
+						"kuveytturk",
+						"com",
+						"tr"
+					],
+					"path": [
+						"api",
+						"connect",
+						"token"
+					]
+				},
+				"description": "ProfitShareCalculationResponse"
+			},
+			"response": []
+		},
+		{
+			"name": "Interbank Money Transfer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <Type In Your Access Token>",
+						"type": "default"
+					},
+					{
+						"key": "Signature",
+						"value": "<Type In Your Signature>",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"SenderAccountSuffix\": 5,\r\n  \"ReceiverAccountNumber\": 400368,\r\n  \"ReceiverAccountSuffix\": 6,\r\n  \"MoneyTransferAmount\": 150,\r\n  \"MoneyTransferDescription\": \"Testinium Test\",\r\n  \"TransferType\": 2,\r\n  \"CorporateWebUserName\": \"gokcul\"\r\n}"
+				},
+				"url": {
+					"raw": "https://apitest.kuveytturk.com.tr/internalapiprep/v1/moneytransfer/interbankmoneytransfer",
+					"protocol": "https",
+					"host": [
+						"apitest",
+						"kuveytturk",
+						"com",
+						"tr"
+					],
+					"path": [
+						"internalapiprep",
+						"v1",
+						"moneytransfer",
+						"interbankmoneytransfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account List V3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <TYPE IN your Access Token>"
+					},
+					{
+						"key": "Signature",
+						"value": "<TYPE in the signature you have generated>",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://apitest.kuveytturk.com.tr/internalapiprep/v3/accounts",
+					"protocol": "https",
+					"host": [
+						"apitest",
+						"kuveytturk",
+						"com",
+						"tr"
+					],
+					"path": [
+						"internalapiprep",
+						"v3",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Transactions V3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <TYPE IN your Access Token>"
+					},
+					{
+						"key": "Signature",
+						"value": "<TYPE in the signature you have generated>",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://apitest.kuveytturk.com.tr/internalapiprep/v3/accounts/5/transactions",
+					"protocol": "https",
+					"host": [
+						"apitest",
+						"kuveytturk",
+						"com",
+						"tr"
+					],
+					"path": [
+						"internalapiprep",
+						"v3",
+						"accounts",
+						"5",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
