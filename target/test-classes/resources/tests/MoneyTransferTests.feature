@@ -16,6 +16,18 @@ Feature: MoneyTransferTests
     And def InterBankMoneyTransferRequest = read('classpath:templates/InterBankMoneyTransferRequest.json')
     And request InterBankMoneyTransferRequest
     When method POST
-    Then print 'Inter BankMoney Transfer Response: ', response
+    Then def InterBankMoneyTransferResponse = response
+    Then print 'Inter BankMoney Transfer Response: ', InterBankMoneyTransferResponse
     Then status 200
-    And match $.value.success == 'true'
+    And match InterBankMoneyTransferResponse.success == true
+
+    And def executionReferenceId = InterBankMoneyTransferResponse.value.executionReferenceId
+
+    And def AccountTransactionList = call  read('classpath:resources/tests/AccountTests.feature@AccountTransactionList')
+
+
+    And  def foundText = karate.match(AccountTransactionList.response, executionReferenceId).size()
+
+    And assert foundText > 0
+
+

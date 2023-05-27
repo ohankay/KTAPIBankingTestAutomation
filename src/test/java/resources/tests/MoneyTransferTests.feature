@@ -16,6 +16,7 @@ Feature: MoneyTransferTests
     And def InterBankMoneyTransferRequest = read('classpath:templates/InterBankMoneyTransferRequest.json')
     And request InterBankMoneyTransferRequest
     When method POST
-    Then print 'Inter BankMoney Transfer Response: ', response
+    Then def InterBankMoneyTransferResponse = response
+    Then print 'Inter BankMoney Transfer Response: ', InterBankMoneyTransferResponse
     Then status 200
-    And match $.value.success == 'true'
+    And match InterBankMoneyTransferResponse.success == true
