@@ -1,0 +1,767 @@
+01:27:08.072 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+01:27:08.160 [main] INFO  c.intuit.karate.core.FeatureRuntime - found scenario at line: 12 - ^Account List$
+01:27:10.205 [main] INFO  com.intuit.karate - karate.env system property was: null 
+01:27:10.293 [main] INFO  c.intuit.karate.core.FeatureRuntime - scenario called at line: 10 by tag: @GetToken
+01:27:11.195 [main] DEBUG com.intuit.karate - request:
+1 > POST https://idprep.kuveytturk.com.tr/api/connect/token
+1 > Content-Type: application/x-www-form-urlencoded
+1 > Content-Length: 181
+1 > Host: idprep.kuveytturk.com.tr
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/16)
+1 > Accept-Encoding: gzip,deflate
+grant_type=client_credentials&scope=public+accounts+transfers&client_id=81a7613772634017ae36e211c6af52ca&client_secret=lRfRg9Ybrdcs6MIrCUdELRsyVJHVvXuxu9ZjJzspGFq%2F9h1FWxLiVA%3D%3D
+
+01:27:12.006 [main] DEBUG com.intuit.karate - response time in milliseconds: 709
+1 < 200
+1 < Cache-Control: no-store, no-cache, max-age=0
+1 < Pragma: no-cache
+1 < Content-Type: application/json; charset=UTF-8
+1 < Date: Sat, 27 May 2023 22:27:11 GMT
+1 < Strict-Transport-Security: max-age=16070400; includeSubDomains; preload
+1 < Transfer-Encoding: chunked
+1 < Set-Cookie: NSC_WT-JE-Qsfq_ENA8=ffffffffaf1c164a45525d5f4f58455e445a4a42378b; Max-Age=1685227631000; Expires=Tue, 21 Feb 55426 08:50:31 GMT; Domain=idprep.kuveytturk.com.tr; Secure
+1 < Set-Cookie: TS010d91f4=01b11a748d1dc15c9a5a7d5086d7664227a2fb93cdf679e1015e7ee223f0c9e89659aa22e4a17132b51da164a1c0419da1e3537670ef8fe9928b73406f5b13f71731f4b9995697f9e2cc517e023bc665ae550d4e60; Domain=idprep.kuveytturk.com.tr
+1 < Set-Cookie: f5avraaaaaaaaaaaaaaaa_session_=NIIOAKODEFPDOAFGLFCBIJNJFIBLIEMGMGJPMBMOIPAKMAALLFLMOCGGOGONPEGEJFHDLODPEDBGIMKLJEDAKGHPHIMODPJOOBPKDLJLKJFHJFNOMKFLMMCKDAIDEOPN; Domain=idprep.kuveytturk.com.tr; Secure
+{"access_token":"e5a5c6c388e5fe6fc35a458436410d5653c3552d774b1b2457704aa8740ca911","token_type":"Bearer","expires_in":3600}
+01:27:12.019 [main] INFO  com.intuit.karate - [print] GetToken {
+  "access_token": "e5a5c6c388e5fe6fc35a458436410d5653c3552d774b1b2457704aa8740ca911",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+ 
+01:27:12.053 [main] INFO  com.intuit.karate - [print] token degeri:  e5a5c6c388e5fe6fc35a458436410d5653c3552d774b1b2457704aa8740ca911 
+01:27:12.087 [main] DEBUG com.intuit.karate - request:
+1 > GET https://apitest.kuveytturk.com.tr/internalapitest/v3/accounts
+1 > Content-Type: application/json
+1 > Authorization: Bearer e5a5c6c388e5fe6fc35a458436410d5653c3552d774b1b2457704aa8740ca911
+1 > Cookie: f5avraaaaaaaaaaaaaaaa_session_=NIIOAKODEFPDOAFGLFCBIJNJFIBLIEMGMGJPMBMOIPAKMAALLFLMOCGGOGONPEGEJFHDLODPEDBGIMKLJEDAKGHPHIMODPJOOBPKDLJLKJFHJFNOMKFLMMCKDAIDEOPN
+1 > Cookie: NSC_WT-JE-Qsfq_ENA8=ffffffffaf1c164a45525d5f4f58455e445a4a42378b
+1 > Cookie: TS010d91f4=01b11a748d1dc15c9a5a7d5086d7664227a2fb93cdf679e1015e7ee223f0c9e89659aa22e4a17132b51da164a1c0419da1e3537670ef8fe9928b73406f5b13f71731f4b9995697f9e2cc517e023bc665ae550d4e60
+1 > Host: apitest.kuveytturk.com.tr
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/16)
+1 > Accept-Encoding: gzip,deflate
+
+
+01:27:16.560 [main] DEBUG com.intuit.karate - response time in milliseconds: 4460
+1 < 200
+1 < Content-Type: application/json; charset=utf-8
+1 < Date: Sat, 27 May 2023 22:27:15 GMT
+1 < Strict-Transport-Security: max-age=16070400; includeSubDomains; preload
+1 < Transfer-Encoding: chunked
+1 < Set-Cookie: TS01a5e83e=01b11a748d83e6a7050156a76dab0528dfa13b2b4fb24737477592b42873ff5324177e544143c519dddbb01842b07aac8786426a0b01550e69e9964ce008e3df967933edd2; Domain=apitest.kuveytturk.com.tr
+1 < Set-Cookie: f5avraaaaaaaaaaaaaaaa_session_=JGOCHHCKMOEDHNGLFCLLHGDHIBBBMJLBDLHLIOJAOIMPHIGCBKPNGAHONIMDNOPPNBIDNMIJEDOFCHPILGCAPAMIHIOJJNHOOEHHDBHBJDAAMHLNPAGGBOEPGBDEPCCE; Domain=apitest.kuveytturk.com.tr; Secure
+{"executionReferenceId":"4xniM17\/3un5Hafj77B82FhPPs9SkvLlrdyGleFPXiE=","success":true,"value":{"accountList":[{"branchId":368,"balance":9.9999999E7,"iban":"TR320020500000040036800001","name":"","branchName":"Talatpaşa Şube","suffix":1,"openDate":"1998-08-18T00:00:00","isActive":1,"fxId":0,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR050020500000040036800002","name":"","branchName":"Talatpaşa Şube","suffix":2,"openDate":"1998-08-18T00:00:00","isActive":1,"fxId":1,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR750020500000040036800003","name":"","branchName":"Talatpaşa Şube","suffix":3,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":2,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR480020500000040036800004","name":"","branchName":"Talatpaşa Şube","suffix":4,"openDate":"2013-01-03T00:00:00","isActive":0,"fxId":0,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":176,"balance":9.9995609E7,"iban":"TR210020500000040036800005","name":"Açıklama","branchName":"Bulgurlu Şubesi","suffix":5,"openDate":"2017-08-17T00:00:00","isActive":1,"fxId":0,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9995609E7},{"branchId":321,"balance":1.00000299E8,"iban":"TR910020500000040036800006","name":"","branchName":"Atakent Şubesi","suffix":6,"openDate":"2019-02-04T00:00:00","isActive":1,"fxId":0,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":1.00000299E8},{"branchId":368,"balance":9.9999999E7,"iban":"TR640020500000040036800007","name":"","branchName":"Talatpaşa Şube","suffix":7,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":6,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR370020500000040036800008","name":"","branchName":"Atakent Şubesi","suffix":8,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":2,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR100020500000040036800009","name":"","branchName":"Atakent Şubesi","suffix":9,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":6,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR800020500000040036800010","name":"","branchName":"Talatpaşa Şube","suffix":10,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":9,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR530020500000040036800011","name":"","branchName":"Talatpaşa Şube","suffix":11,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":10,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR260020500000040036800012","name":"","branchName":"Atakent Şubesi","suffix":12,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":9,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR960020500000040036800013","name":"","branchName":"Talatpaşa Şube","suffix":13,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":12,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR690020500000040036800014","name":"","branchName":"Talatpaşa Şube","suffix":14,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":13,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR420020500000040036800015","name":"","branchName":"Talatpaşa Şube","suffix":15,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":14,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR150020500000040036800016","name":"","branchName":"Talatpaşa Şube","suffix":16,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":15,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR850020500000040036800017","name":"","branchName":"Talatpaşa Şube","suffix":17,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":16,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR580020500000040036800018","name":"","branchName":"Talatpaşa Şube","suffix":18,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":17,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR310020500000040036800019","name":"","branchName":"Atakent Şubesi","suffix":19,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":10,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR040020500000040036800020","name":"","branchName":"Talatpaşa Şube","suffix":20,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":19,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR740020500000040036800021","name":"","branchName":"Atakent Şubesi","suffix":21,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":12,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR470020500000040036800022","name":"","branchName":"Atakent Şubesi","suffix":22,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":13,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR200020500000040036800023","name":"","branchName":"Atakent Şubesi","suffix":23,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":14,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR900020500000040036800024","name":"","branchName":"Atakent Şubesi","suffix":24,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":15,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR630020500000040036800025","name":"","branchName":"Talatpaşa Şube","suffix":25,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":24,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR360020500000040036800026","name":"","branchName":"Atakent Şubesi","suffix":26,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":16,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR090020500000040036800027","name":"","branchName":"Talatpaşa Şube","suffix":27,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":26,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR790020500000040036800028","name":"","branchName":"Talatpaşa Şube","suffix":28,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":27,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR520020500000040036800029","name":"","branchName":"Atakent Şubesi","suffix":29,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":17,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR250020500000040036800030","name":"","branchName":"Talatpaşa Şube","suffix":30,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":29,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR950020500000040036800031","name":"","branchName":"Talatpaşa Şube","suffix":31,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":30,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR680020500000040036800032","name":"","branchName":"Atakent Şubesi","suffix":32,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":26,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR410020500000040036800033","name":"","branchName":"Atakent Şubesi","suffix":33,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":27,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR140020500000040036800034","name":"","branchName":"Atakent Şubesi","suffix":34,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":29,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR840020500000040036800035","name":"","branchName":"Atakent Şubesi","suffix":35,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":30,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.999989244E7,"iban":"TR570020500000040036800036","name":"","branchName":"Atakent Şubesi","suffix":36,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":24,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.999989244E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR300020500000040036800037","name":"","branchName":"Talatpaşa Şube","suffix":37,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":36,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR030020500000040036800038","name":"","branchName":"Talatpaşa Şube","suffix":38,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":37,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR730020500000040036800039","name":"","branchName":"Talatpaşa Şube","suffix":39,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":38,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR460020500000040036800040","name":"","branchName":"Talatpaşa Şube","suffix":40,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":39,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":5.714285657E7,"iban":"TR190020500000040036800041","name":"","branchName":"Talatpaşa Şube","suffix":41,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":40,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":5.714285657E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR890020500000040036800042","name":"","branchName":"Atakent Şubesi","suffix":42,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":36,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR620020500000040036800043","name":"","branchName":"Atakent Şubesi","suffix":43,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":37,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR350020500000040036800044","name":"","branchName":"Atakent Şubesi","suffix":44,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":39,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":5.714285657E7,"iban":"TR080020500000040036800045","name":"","branchName":"Atakent Şubesi","suffix":45,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":40,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":5.714285657E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR780020500000040036800046","name":"","branchName":"Atakent Şubesi","suffix":46,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":38,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":368,"balance":9.9999999E7,"iban":"TR400020500000040036800051","name":"","branchName":"Talatpaşa Şube","suffix":51,"openDate":"1998-08-18T00:00:00","isActive":0,"fxId":50,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR130020500000040036800052","name":"","branchName":"Atakent Şubesi","suffix":52,"openDate":"2019-03-22T00:00:00","isActive":1,"fxId":50,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR480020500000040036800101","name":"","branchName":"Atakent Şubesi","suffix":101,"openDate":"2019-02-04T00:00:00","isActive":1,"fxId":1,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7},{"branchId":321,"balance":9.9999999E7,"iban":"TR210020500000040036800102","name":"","branchName":"Atakent Şubesi","suffix":102,"openDate":"2019-02-04T00:00:00","isActive":1,"fxId":19,"productType":"Cari Hesap","customerName":"ZİYAETTİN","availableBalance":9.9999999E7}]},"results":[]}
+01:27:16.569 [main] INFO  com.intuit.karate - [print] Account List Response:  {
+  "executionReferenceId": "4xniM17/3un5Hafj77B82FhPPs9SkvLlrdyGleFPXiE=",
+  "success": true,
+  "value": {
+    "accountList": [
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR320020500000040036800001",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 1,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 1,
+        "fxId": 0,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR050020500000040036800002",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 2,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 1,
+        "fxId": 1,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR750020500000040036800003",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 3,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 2,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR480020500000040036800004",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 4,
+        "openDate": "2013-01-03T00:00:00",
+        "isActive": 0,
+        "fxId": 0,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 176,
+        "balance": 9.9995609E7,
+        "iban": "TR210020500000040036800005",
+        "name": "Açıklama",
+        "branchName": "Bulgurlu Şubesi",
+        "suffix": 5,
+        "openDate": "2017-08-17T00:00:00",
+        "isActive": 1,
+        "fxId": 0,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9995609E7
+      },
+      {
+        "branchId": 321,
+        "balance": 1.00000299E8,
+        "iban": "TR910020500000040036800006",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 6,
+        "openDate": "2019-02-04T00:00:00",
+        "isActive": 1,
+        "fxId": 0,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 1.00000299E8
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR640020500000040036800007",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 7,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 6,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR370020500000040036800008",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 8,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 2,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR100020500000040036800009",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 9,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 6,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR800020500000040036800010",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 10,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 9,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR530020500000040036800011",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 11,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 10,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR260020500000040036800012",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 12,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 9,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR960020500000040036800013",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 13,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 12,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR690020500000040036800014",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 14,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 13,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR420020500000040036800015",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 15,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 14,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR150020500000040036800016",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 16,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 15,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR850020500000040036800017",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 17,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 16,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR580020500000040036800018",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 18,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 17,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR310020500000040036800019",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 19,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 10,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR040020500000040036800020",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 20,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 19,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR740020500000040036800021",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 21,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 12,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR470020500000040036800022",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 22,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 13,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR200020500000040036800023",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 23,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 14,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR900020500000040036800024",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 24,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 15,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR630020500000040036800025",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 25,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 24,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR360020500000040036800026",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 26,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 16,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR090020500000040036800027",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 27,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 26,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR790020500000040036800028",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 28,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 27,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR520020500000040036800029",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 29,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 17,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR250020500000040036800030",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 30,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 29,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR950020500000040036800031",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 31,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 30,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR680020500000040036800032",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 32,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 26,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR410020500000040036800033",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 33,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 27,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR140020500000040036800034",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 34,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 29,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR840020500000040036800035",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 35,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 30,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.999989244E7,
+        "iban": "TR570020500000040036800036",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 36,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 24,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.999989244E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR300020500000040036800037",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 37,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 36,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR030020500000040036800038",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 38,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 37,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR730020500000040036800039",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 39,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 38,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR460020500000040036800040",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 40,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 39,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 5.714285657E7,
+        "iban": "TR190020500000040036800041",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 41,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 40,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 5.714285657E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR890020500000040036800042",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 42,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 36,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR620020500000040036800043",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 43,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 37,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR350020500000040036800044",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 44,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 39,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 5.714285657E7,
+        "iban": "TR080020500000040036800045",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 45,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 40,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 5.714285657E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR780020500000040036800046",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 46,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 38,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 368,
+        "balance": 9.9999999E7,
+        "iban": "TR400020500000040036800051",
+        "name": "",
+        "branchName": "Talatpaşa Şube",
+        "suffix": 51,
+        "openDate": "1998-08-18T00:00:00",
+        "isActive": 0,
+        "fxId": 50,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR130020500000040036800052",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 52,
+        "openDate": "2019-03-22T00:00:00",
+        "isActive": 1,
+        "fxId": 50,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR480020500000040036800101",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 101,
+        "openDate": "2019-02-04T00:00:00",
+        "isActive": 1,
+        "fxId": 1,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      },
+      {
+        "branchId": 321,
+        "balance": 9.9999999E7,
+        "iban": "TR210020500000040036800102",
+        "name": "",
+        "branchName": "Atakent Şubesi",
+        "suffix": 102,
+        "openDate": "2019-02-04T00:00:00",
+        "isActive": 1,
+        "fxId": 19,
+        "productType": "Cari Hesap",
+        "customerName": "ZİYAETTİN",
+        "availableBalance": 9.9999999E7
+      }
+    ]
+  },
+  "results": [
+  ]
+}
+ 
+01:27:18.049 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) src/test/java/resources/tests/AccountTests.feature

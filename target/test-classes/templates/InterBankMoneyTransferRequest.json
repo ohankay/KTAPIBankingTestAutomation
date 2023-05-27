@@ -1,0 +1,9 @@
+{
+  "SenderAccountSuffix": 5,
+  "ReceiverAccountNumber": 400368,
+  "ReceiverAccountSuffix": 6,
+  "MoneyTransferAmount": 150,
+  "MoneyTransferDescription": "Testinium Test",
+  "TransferType": 2,
+  "CorporateWebUserName": "gokcul"
+}
